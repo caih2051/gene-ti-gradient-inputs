@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+type: dataset
+message: "Please cite the archived version of this dataset."
+title: "GENE parameter files for the simulations reported in this paper"
+authors:
+  - family-names: "Kim"
+    given-names: "Il-Hwan"
+  - family-names: "Seo"
+    given-names: "Jaemin"
+version: "1.0.0"
+license: CC-BY-4.0
+url: "https://github.com/caih2051/gene-ti-gradient-inputs"

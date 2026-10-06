@@ -1,0 +1,187 @@
+! AUTO-GENERATED CK=0 GRADIENT / FAST-ION STAIRCASE CASE
+! case_role = fastion_reference
+! source_case = ti_gradient_scale_1p00__tfast_over_te_22p9382
+! ti_log_gradient_scale = 1.100000
+! Ti1/Ti3 use an anchor-preserving logarithmic-gradient transform from the designated gTi=1.00 ITERDB.
+! fast_ion_present = T
+! target_Tfast_over_Te_at_rho_0p4 = 22.93815593
+! profile_control_ck_heat = 0.00000000
+! profile_control_ck_part = 0.00000000
+! Fixed primary grid: nx/nky/nz/nv/nw = 256/32/48/32/16.
+! 512-rank topology (s/v/w/x/y/z) = 4/1/8/1/2/8.
+! The no-fast control is the documented n_spec=3 structural exception.
+! Species temp/dens scalars are synchronized to the generated ITERDB at x0.
+! ======================================================================
+
+&parallelization
+n_procs_s = 4
+n_procs_v = 1
+n_procs_w = 8
+n_procs_x = 1
+n_procs_y = 2
+n_procs_z = 8
+n_procs_sim = 512
+/
+
+&box
+n_spec = 4
+nx0 = 256
+nky0 = 32
+nz0 = 48
+nv0 = 32
+nw0 = 16
+
+kymin = 0.043154129
+lv = 3.7000
+lw = 13.00000
+lx = 158.086
+lx_a = 0.800000
+x0 = 0.50000000
+n0_global = -1111
+/
+
+&in_out
+diagdir = './out/'
+
+read_checkpoint = F
+write_checkpoint = T
+
+istep_field = 100
+istep_mom = 200
+istep_nrg = 10
+istep_vsp = 300
+istep_schpt = 5000
+istep_prof = 200
+istep_neoclass = 300
+
+write_std = T
+iterdb_file = './iterdb_sample'
+/
+
+&general
+f_version = T
+nonlinear = T
+x_local = F
+comp_type = 'IV'
+perf_vec = 1 1 1 1 2 1 1 1 1
+nblocks = 32
+hypz_opt = F
+hypz_compensation = T
+
+timescheme = 'RK4'
+dt_max = 0.4335E-03
+courant = 1.25
+
+timelim = 338400
+ntimesteps = 5000000
+simtimelim = 0.1000E+06
+underflow_limit = 0.1000E-19
+
+beta = -1
+debye2 = -1
+collision_op = 'none'
+
+init_cond = 'db'
+
+hyp_x = 0.050000
+hyp_x_order = 4
+hyp_y = 0.000000
+hyp_y_order = 4
+hyp_z_with_dz_prefactor = F
+hyp_z = -0.500000
+hyp_z_order = 4
+hyp_v_with_dv_prefactor = F
+hyp_v = 0.200000
+
+perf_tsteps = -1
+/
+
+&nonlocal_x
+l_buffer_size = 0.1000
+lcoef_krook = 2.000
+u_buffer_size = 0.1000
+ucoef_krook = 2.000
+
+lpow_krook = 4
+upow_krook = 4
+
+drive_buffer = T
+
+ck_heat = 0.00000000
+ck_part = 0.00000000
+psource_type = 2
+
+lck_buffer_size = 0.1000
+uck_buffer_size = 0.1000
+lckcoef_krook = 2.0
+uckcoef_krook = 2.0
+lckpow_krook = 4
+uckpow_krook = 4
+
+rad_bc_type = 1
+/
+
+&geometry
+magn_geometry = 'tracer_efit'
+geomdir = '.'
+geomfile = 'g022663.005340'
+mag_prof = T
+rhostar = -1
+dpdx_term = 'gradB_eq_curv'
+dpdx_pm = -2.0000000
+norm_flux_projection = F
+/
+
+&species
+name = 'electrons'
+prof_type = -2
+
+mass = 0.27240000E-03
+temp = 1.0000000000
+dens = 1.0000001949
+charge = -1.0000000
+/
+
+&species
+name = 'ions'
+prof_type = -2
+
+mass = 1.0000000
+temp = 1.5467090644
+dens = 0.6410341785
+charge = 1.0000000
+/
+
+&species
+name = 'fast_ions'
+prof_type = -2
+
+mass = 1.0000000
+temp = 30.1736778125
+dens = 0.2283245735
+charge = 1.0000000
+/
+
+&species
+name = 'carbon'
+prof_type = -2
+
+mass = 6.0000000
+temp = 1.5467090644
+dens = 0.0217735759
+charge = 6.0000000
+/
+
+&units
+Bref = 1.7164389684313888
+Tref = 1.3326400000000000
+nref = 1.6276136827558614
+Lref = 0.60623676627248746
+mref = 2.0000000000000000
+
+omegatorref = -1
+/
+
+&bsgrid
+is_bsg = F
+/
